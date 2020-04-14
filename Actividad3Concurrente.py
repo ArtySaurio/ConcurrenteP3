@@ -12,13 +12,13 @@ def fibonacci(n):
 
     #Condicion si el num fibonacci es 0 o 1 el numero sera 0 y 1
     if n in (0, 1):
-        print('Su numero de cores es de {} y el Fibonnaci del {} es: {}'.format(numerocores, n, n))
+        print('Su numero de cores es de {} y el Fibonacci del {} es: {}'.format(numerocores, n, n))
     else:
         for i in range(2, n):
             nuevonum = primernum + segundonum
             primernum = segundonum
             segundonum = nuevonum
-        print('Su numero de cores es de {} y el Fibonnaci del {} es: {}'.format(numerocores, n, segundonum))
+        print('Su numero de cores es de {} y el Fibonacci del {} es: {}'.format(numerocores, n, segundonum))
 
 if __name__ == '__main__':
 
