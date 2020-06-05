@@ -1,6 +1,6 @@
 import multiprocessing
 import threading
-from multiprocessing import Pool
+# from multiprocessing import Pool # ESTA LINEA SOBRA ya la tienes en la l1.
 
 def fibonacci(n):
 
@@ -20,14 +20,18 @@ def fibonacci(n):
             segundonum = nuevonum
         print('Su numero de cores es de {} y el Fibonacci del {} es: {}'.format(numerocores, n, segundonum))
 
+
+
 if __name__ == '__main__':
 
     #Pregunta a usuario su número de expediente
     numeroescogido = input('Introduzca el número de expediente: ')
+    print(numeroescogido.split())
     segmentdata = map(int, numeroescogido.split())
-
     #Pool para introducir los procesos
-    pool = Pool()
+    pool = multiprocessing.Pool()
+    # Donde le pasas al Pool la cantidad de recursos que dispone (cores) ?
+    # No haces uso de RawArray ( memoria compartida )
     result = pool.map(fibonacci, segmentdata)
     pool.close()
     pool.join()
